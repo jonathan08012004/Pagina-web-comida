@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimaro Cocina</title>
+    <link rel="stylesheet" href="Estilos.css">
+<!-- Link de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion">
+
+<!-- Logo(Nombre) y Imagen de sombrero -->
+                <div class="logo">
+                    <h1><a href="#">Dimaro Cocina</a></h1>
+                </div>
+
+<!-- Barra de navegacion -->
+                <div class="links-navegacion">
+                    <nav>
+                        <ul>                        
+                            <li><a href="Inicio.html">Inicio</a></li>
+                            <li><a href="Productos.html">Productos</a></li>
+                            <li><a href="#bienvenida">Dimaro</a></li>
+                            <li><a href="#redes">Contacto</a></li>
+                        </ul>
+                    </nav> 
+                </div>
+                
+<!-- Cesta de compras (falta terminar)-->
+                <div class="contenedor-cesta">
+                    <div class="contenido-cesta">
+                        <i class="bi bi-basket"></i>
+                        <!-- mensaje de cesta vacia -->
+                        <p>Su cesta esta vacia</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio unitario</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th></th> <!-- es una columna vacia en la que mas adelante se agregara la imagen de tacho de basura para eliminar elementos de forma individual-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <!-- aca van a ir los productos que se agregen a la cesta -->
+                            </tbody>
+                        </table>
+                        <!-- aca dice el precio total de la compra -->
+                        <div class="precio-total">
+                            <h3>Total:</h3>
+                            <h3>0</h3>
+                        </div>
+                        <!-- aca estan los botones -->                                 
+                        <div class="botones-cesta">
+                            <button class="finalizar-compra">Finalizar Compra</button>
+                            <button class="vaciar-cesta">Vaciar Cesta</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+<!-- Banner principal -->
+        <div class="contenedor-banner-principal">
+            <div class="contenido-banner-principal">
+                <div class="texto-banner-principal">
+                    <h2>Más que sabores, momentos</h2>
+                    <p>Animate a conocer nuestras especialidades dulces</p>
+                </div>
+                <img src="Imagenes/Imagen de banner principal.jpg" alt="Imagen de chocolates para el 'Hero Image'">
+            </div>
+
+        </div>
+
+    </header>
+
+<!-- Esta etiqueta se utiliza para englobar el contenido principa(para lo que cambia de una pagina a otra) -->
+
+    <main> 
+<!-- Descripcion de bienvenida -->
+        <div class="contenedor-descripcion-dimaro">
+            <div class="contenido-descripcion-dimaro">
+                <div class="bienvenida-dimaro" id="bienvenida">
+                    <div class="texto-bienvenida-dimaro">
+                        <h2>Bienvenidos a Dimaro Cocina 
+                            <br> Donde tus deseos de algo dulce 
+                            <br> cobran vida
+                        </h2>
+                    </div>
+                    <div class="Imagen-tortas-bienvenida">
+                        <img src="Imagenes/Imagen de tortas para bienvenida.avif" alt="Imagen de tortas en la bienvenida">
+                    </div>
+                </div>
+                <div class="descripcion-dimaro">
+                    <div class="texto-descripcion-dimaro">
+                    <p>
+                        Dimaro Cocina es un emprendimiento personal dedicado a la creación de chocolates y postres artesanales. Cada producto nace del amor por lo dulce y del cuidado en cada detalle, ofreciendo sabores únicos pensados para compartir, regalar o simplemente disfrutar.
+                    </p>
+                    </div>
+                    <div class="video-descripcion-dimaro">
+                        <video autoplay loop muted> <!-- El autoplay reproduce el video, pero cuando este termina queda estatico.Por lo que se utiliza el loop hace que se repita infinitas veces y el muted se utiliza para corregir un error de chrome-->
+                            <source src="Imagenes/Video de galletas para descricpcion.mp4" type="video/mp4"> <!-- El type sirve para especificar el formato del archivo de video que se está cargando.-->
+                            Tu navegador no soporta la reproduccion del video
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+<!-- Footer -->
+
+    <footer>
+        <div class="contenedor-footer">
+        <div class="contenido-footer">
+            
+            <!-- Navegación en el footer -->
+            <nav class="contenido-navegacion-footer" aria-label="Navegación del pie de página">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="#bienvenida">Dimaro</a></li>
+                <li><a href="#redes">Contacto</a></li>
+            </ul>
+            </nav>
+    
+            <!-- Redes sociales -->
+            <div class="footer-redes" id="redes">
+            <h3>Seguinos en nuestras redes:</h3>
+            <a href="https://www.instagram.com/dimaro.cocina?igsh=MTF2dHJtZTM1djJnZw==" target="_blank" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575932816591&locale=es_LA" target="_blank" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/2215608396" target="_blank" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            </div>
+    
+        </div>
+        </div>
+    </footer>
+    
+    <script src="funcionalidades.js"></script>
+</body>
+</html>

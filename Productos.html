@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimaro Cocina</title>
+    <link rel="stylesheet" href="Estilos.css">
+<!-- Link de bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="contenedor-navegacion">
+            <div class="contenido-navegacion">
+
+<!-- Logo(Nombre) y Imagen de sombrero -->
+                <div class="logo">
+                    <h1><a href="#">Dimaro Cocina</a></h1>
+                </div>
+
+<!-- Barra de navegacion -->
+                <div class="links-navegacion">
+                    <nav>
+                        <ul>                        
+                            <li><a href="Inicio.html">Inicio</a></li>
+                            <li><a href="Productos.html">Productos</a></li>
+                            <li><a href="Inicio.html#binvenida">Dimaro</a></li>
+                            <li><a href="Inicio.html#redes">Contacto</a></li>
+                        </ul>
+                    </nav> 
+                </div>
+                
+<!-- Cesta de compras (falta terminar)-->
+                <div class="contenedor-cesta">
+                    <div class="contenido-cesta">
+                        <i class="bi bi-basket"></i>
+                        <!-- mensaje de cesta vacia -->
+                        <p>Su cesta esta vacia</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Precio unitario</th>
+                                    <th>Cantidad</th>
+                                    <th>Subtotal</th>
+                                    <th></th> <!-- es una columna vacia en la que mas adelante se agregara la imagen de tacho de basura para eliminar elementos de forma individual-->
+                                </tr>
+                            </thead>
+                            <tbody>
+                        <!-- aca van a ir los productos que se agregen a la cesta -->
+                            </tbody>
+                        </table>
+                        <!-- aca dice el precio total de la compra -->
+                        <div class="precio-total">
+                            <h3>Total:</h3>
+                            <h3>0</h3>
+                        </div>
+                        <!-- aca estan los botones -->                                 
+                        <div class="botones-cesta">
+                            <button class="finalizar-compra">Finalizar Compra</button>
+                            <button class="vaciar-cesta">Vaciar Cesta</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div> 
+
+    </header>
+
+<!-- Esta etiqueta se utiliza para englobar el contenido principa(para lo que cambia de una pagina a otra) -->
+
+    <main> 
+        <h1>Nuestros Productos</h1>
+
+    </main>
+
+<!-- Footer -->
+
+    <footer>
+        <div class="contenedor-footer">
+        <div class="contenido-footer">
+            
+            <!-- Navegación en el footer -->
+            <nav class="contenido-navegacion-footer" aria-label="Navegación del pie de página">
+            <h3>Navegación</h3>
+            <ul>
+                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="Productos.html">Productos</a></li>
+                <li><a href="Inicio.html#bienvenida">Dimaro</a></li>
+                <li><a href="Inicio.html#redes">Contacto</a></li>
+            </ul>
+            </nav>
+    
+            <!-- Redes sociales -->
+            <div class="footer-redes">
+            <h3>Seguinos en nuestras redes:</h3>
+            <a href="https://www.instagram.com/dimaro.cocina?igsh=MTF2dHJtZTM1djJnZw==" target="_blank" aria-label="Instagram">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61575932816591&locale=es_LA" target="_blank" aria-label="Facebook">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/2215608396" target="_blank" aria-label="WhatsApp">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            </div>
+    
+        </div>
+        </div>
+    </footer>  
+    
+    <script src="funcionalidades.js"></script>
+</body>
+</html>
