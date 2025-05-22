@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,9 @@
 <!-- Cesta de compras (falta terminar)-->
                 <div class="contenedor-cesta">
                     <div class="contenido-cesta">
-                        <i class="bi bi-basket"></i>
+                        <button id="botonCarrito">
+                            <i class="bi bi-basket"></i>
+                        </button>
                         <!-- mensaje de cesta vacia -->
                         <p>Su cesta esta vacia</p>
                         <table>
@@ -50,13 +52,13 @@
                                 </tr>
                             </thead>
                             <tbody>
-                        <!-- aca van a ir los productos que se agregen a la cesta -->
+                        <!-- aca van a ir los productos que se agregen a la cesta con js-->
                             </tbody>
                         </table>
                         <!-- aca dice el precio total de la compra -->
                         <div class="precio-total">
                             <h3>Total:</h3>
-                            <h3>0</h3>
+                            <h3>$0</h3>
                         </div>
                         <!-- aca estan los botones -->                                 
                         <div class="botones-cesta">
@@ -75,97 +77,105 @@
 
 <!-- Cartas de Productos -->
     <main> 
-        <section>
+        <section aria-label="Productos">
             <h1>Nuestros Productos:</h1>
             <div>
-                <div class="producto">
-                    <img src="Imagenes/Barra de chocolate negro.webp" alt="Barra de chocolate">
-                    <h3></h3>
-                    <p class="precio"></p>
+                <article class="producto">
+                    <img src="Imagenes/Barra de chocolate negro.webp" alt="Barra de chocolate negro">
+                    <h3>Barra de Chocolate Negro</h3>
+                    <p class="precio">$1.200</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="Imagenes/Caja de bombones de chocolate.webp" alt="Caja de bombones">
-                    <h3></h3>
-                    <p class="precio"></p>
+                </article>
+                
+                <article class="producto">
+                    <img src="Imagenes/Caja de bombones de chocolate.webp" alt="Caja de bombones de chocolate">
+                    <h3>Caja de Bombones Artesanales</h3>
+                    <p class="precio">$3.500</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="Imagenes/Cup cake.jpg" alt="cupcake">
-                    <h3></h3>
-                    <p class="precio"></p>
+                </article>
+                
+                <article class="producto">
+                    <img src="Imagenes/Cup cake.jpg" alt="Cupcake decorado">
+                    <h3>Cupcake Decorado</h3>
+                    <p class="precio">$800</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
+                </article>
+                
+                <article class="producto">
                     <img src="Imagenes/Pastafrola de membrillo.webp" alt="Pastafrola de membrillo">
-                    <h3></h3>
-                    <p class="precio"></p>
+                    <h3>Pastafrola de Membrillo</h3>
+                    <p class="precio">$2.000</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
+                </article>
+                
+                <article class="producto">
                     <img src="Imagenes/Pastrafola de batata.jpg" alt="Pastafrola de batata">
-                    <h3></h3>
-                    <p class="precio"></p>
+                    <h3>Pastafrola de Batata</h3>
+                    <p class="precio">$2.000</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="Imagenes/Porcion de brownie de chocolate.jpg" alt="Porcion de brownie">
-                    <h3></h3>
-                    <p class="precio"></p>
+                </article>
+                
+                <article class="producto">
+                    <img src="Imagenes/Porcion de brownie de chocolate.jpg" alt="Porción de brownie de chocolate">
+                    <h3>Brownie de Chocolate</h3>
+                    <p class="precio">$1.100</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="Imagenes/Torta mil hojas.jpg" alt="Torta milhojas">
-                    <h3></h3>
-                    <p class="precio"></p>
+                </article>
+                
+                <article class="producto">
+                    <img src="Imagenes/Torta mil hojas.jpg" alt="Torta mil hojas">
+                    <h3>Torta Mil Hojas</h3>
+                    <p class="precio">$4.800</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="Imagenes/Torta red velvet.avif" alt="Torta redvelvet">
-                    <h3></h3>
-                    <p class="precio"></p>
+                </article>
+                
+                <article class="producto">
+                    <img src="Imagenes/Torta red velvet.avif" alt="Torta Red Velvet">
+                    <h3>Torta Red Velvet</h3>
+                    <p class="precio">$5.500</p>
                     <div class="cantidad">
                         <button class="cantidad-btn menos">-</button>
                         <input type="number" value="1" min="1" class="cantidad-input">
                         <button class="cantidad-btn mas">+</button>
                     </div>
                     <button class="agregar-carrito">Agregar al Carrito</button>
-                </div>
+                </article>
+                
             </div>
         </section>
     </main>
@@ -180,7 +190,7 @@
             <nav class="contenido-navegacion-footer" aria-label="Navegación del pie de página">
             <h3>Navegación</h3>
             <ul>
-                <li><a href="Inicio.html">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li><a href="Productos.html">Productos</a></li>
                 <li><a href="Inicio.html#bienvenida">Dimaro</a></li>
                 <li><a href="Inicio.html#redes">Contacto</a></li>
@@ -188,11 +198,12 @@
             </nav>
 
             <!-- Input de comentarios -->
-            <form>
+            <form id="formComentario">
                 <label for="inputComentario">
                     <h3>Comentanos acerca de tu experiencia con nuestros productos:</h3>
                 </label>
                 <textarea id="inputComentario" placeholder="Escribí tu comentario aquí..." rows="4" cols="50"></textarea>
+                <button type="button" id="botonComentario" onclick = "recibirComentarios()">Enviar Comentario</button>
             </form>
     
             <!-- Redes sociales -->

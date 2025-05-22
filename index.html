@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +36,9 @@
 <!-- Cesta de compras (falta terminar)-->
                 <div class="contenedor-cesta">
                     <div class="contenido-cesta">
-                        <i class="bi bi-basket"></i>
+                        <button id="botonCarrito">
+                            <i class="bi bi-basket"></i>
+                        </button>
                         <!-- mensaje de cesta vacia -->
                         <p>Su cesta esta vacia</p>
                         <table>
@@ -137,11 +139,12 @@
             </nav>
 
             <!-- Input de comentarios -->
-            <form>
+            <form id="formComentario">
                 <label for="inputComentario">
                     <h3>Comentanos acerca de tu experiencia con nuestros productos:</h3>
                 </label>
                 <textarea id="inputComentario" placeholder="Escribí tu comentario aquí..." rows="4" cols="50"></textarea>
+                <button type="button" id="botonComentario" onclick = "recibirComentarios()">Enviar Comentario</button>
             </form>
     
             <!-- Redes sociales -->
