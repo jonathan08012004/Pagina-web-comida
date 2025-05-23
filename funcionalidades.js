@@ -33,6 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     botonVaciar.addEventListener('click', vaciarCarrito);
     botonFinalizar.addEventListener('click', finalizarCompra);
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    }
+
     mostrarCarrito();
 
     activarBotonesMas();
@@ -56,6 +61,7 @@ function agregarAlCarrito(index) {
     }
 
     mostrarCarrito();
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 function mostrarCarrito() {
@@ -88,12 +94,14 @@ function mostrarCarrito() {
 function eliminarProducto(index) {
     carrito.splice(index, 1);
     mostrarCarrito();
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 function vaciarCarrito() {
     carrito = [];
     mostrarCarrito();
     alert("La cesta ha sido vaciada.");
+    localStorage.setItem('carrito', JSON.stringify(carrito));
 }
 
 function finalizarCompra() {
@@ -101,7 +109,9 @@ function finalizarCompra() {
         alert("El carrito está vacío. Agregá productos antes de finalizar la compra.");
     } else {
         alert("¡Gracias por tu compra! Se ha realizado de manera exitosa.");
-        vaciarCarrito();
+        carrito = [];
+        mostrarCarrito();
+        localStorage.removeItem('carrito');
     }
 }
 

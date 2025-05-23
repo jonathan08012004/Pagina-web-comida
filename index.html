@@ -34,44 +34,44 @@
                 </div>
                 
 <!-- Cesta de compras (falta terminar)-->
-                <div class="contenedor-cesta">
-                    <div class="contenido-cesta">
-                        <button id="botonCarrito">
-                            <i class="bi bi-basket"></i>
-                        </button>
-                        <!-- mensaje de cesta vacia -->
-                        <p>Su cesta esta vacia</p>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Precio unitario</th>
-                                    <th>Cantidad</th>
-                                    <th>Subtotal</th>
-                                    <th></th> <!-- es una columna vacia en la que mas adelante se agregara la imagen de tacho de basura para eliminar elementos de forma individual-->
-                                </tr>
-                                <!--RECORDATORIO!!! = Desde js tengo que crear "tr"(fila de tabla) y dentro de este un "td"(datos de la tabla) -->
-                            </thead>
-                            <tbody>
-                        <!-- aca van a ir los productos que se agregen a la cesta -->
-                            </tbody>
-                        </table>
-                        <!-- aca dice el precio total de la compra -->
-                        <div class="precio-total">
-                            <h3>Total:</h3>
-                            <h3>0</h3>
-                        </div>
-                        <!-- aca estan los botones -->                                 
-                        <div class="botones-cesta">
-                            <button class="finalizar-compra">Finalizar Compra</button>
-                            <button class="vaciar-cesta">Vaciar Cesta</button>
-                        </div>
-                    </div>
-                </div>
+<div class="contenedor-carrito">
+    <div class="contenido-carrito" id="cestaContenido">
+        <button id="botonCarrito">
+            <i class="bi bi-basket"></i>
+        </button>
+        <!-- mensaje de cesta vacia -->
+        <p>Su cesta esta vacia</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th></th> <!-- es una columna vacia en la que mas adelante se agregara la imagen de tacho de basura para eliminar elementos de forma individual-->
+                </tr>
+            </thead>
+            <tbody>
+        <!-- aca van a ir los productos que se agregen a la cesta con js-->
+            </tbody>
+        </table>
+        <!-- aca dice el precio total de la compra -->
+        <div class="precio-total">
+            <h3>Total:</h3>
+            <h3>$0</h3>
+        </div>
+        <!-- aca estan los botones -->                                 
+        <div class="botones-carrito">
+            <button class="finalizar-compra">Finalizar Compra</button>
+            <button class="vaciar-carrito">Vaciar Cesta</button>
+        </div>
+    </div>
+</div>
 
-            </div>
-        </div> 
+</div>
+</div> 
 
+</header>
 <!-- Banner principal -->
         <div class="contenedor-banner-principal">
             <div class="contenido-banner-principal">
