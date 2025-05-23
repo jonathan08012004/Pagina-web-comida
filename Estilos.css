@@ -1,0 +1,13 @@
+/* Estilos para eliminar las flechas de dentro de los inputs de cantidad de productos */
+
+/*Estos son para google y mozila*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Este es para Firefox */
+input[type=number] {-moz-appearance: textfield;}
+
+/*Es para que se muestre u oculte el carrito.Lo manejo con js*/
+
