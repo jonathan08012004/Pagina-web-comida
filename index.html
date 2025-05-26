@@ -119,6 +119,38 @@
             </div>
         </div>
 
+        <!-- Comentarios con formsubmit -->
+        
+        <section>
+            <div class="container">
+                <h2>Dejanos tu comentario</h2>
+                <form target="_blank" action="https://formsubmit.co/e0b910934518ce53ac477321aecd5ddc" method="POST">
+                <!-- Fila con nombre y email -->
+                <div class="form-group">
+                    <div class="form-row">
+                    <div class="col">
+                        <input type="text" name="name" class="form-control" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="col">
+                        <input type="email" name="email" class="form-control" placeholder="Tu correo electrónico" required>
+                    </div>
+                    </div>
+                </div>
+                <!-- Comentario -->
+                <div class="form-group">
+                    <textarea placeholder="Escribí tu comentario aquí..." class="form-control" name="message" rows="6" required></textarea>
+                </div>
+                <!-- Opcionales -->
+                <input type="hidden" name="_autoresponse" value="¡Gracias por dejarnos tu comentario! Lo hemos recibido correctamente.">
+                <input type="hidden" name="_subject" value="Nuevo comentario desde Dimaro Cocina">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                <!-- Botón -->
+                <button type="submit" class="btn btn-lg btn-dark btn-block">Enviar Comentario</button>
+                </form>
+            </div>
+        </section>
+
     </main>
 
 <!-- Footer -->
@@ -137,15 +169,6 @@
                 <li><a href="#redes">Contacto</a></li>
             </ul>
             </nav>
-
-            <!-- Input de comentarios -->
-            <form id="formComentario">
-                <label for="inputComentario">
-                    <h3>Comentanos acerca de tu experiencia con nuestros productos:</h3>
-                </label>
-                <textarea id="inputComentario" placeholder="Escribí tu comentario aquí..." rows="4" cols="50"></textarea>
-                <button type="button" id="botonComentario" onclick = "recibirComentarios()">Enviar Comentario</button>
-            </form>
     
             <!-- Redes sociales -->
             <div class="footer-redes" id="redes">
