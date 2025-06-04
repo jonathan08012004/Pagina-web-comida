@@ -116,6 +116,29 @@ header {
     width: 100%;
 }
 
+/* Botón hamburguesa */
+.btnHamburgueza {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--light-text);
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+}
+
+.btnHamburgueza:hover {
+    color: var(--secondary-color);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Carrito */
 .contenedor-carrito {
     position: relative;
@@ -230,7 +253,7 @@ header {
 .finalizar-compra {
     background-color: var(--primary-color);
     color: var(--light-text);
-    }
+}
 
 .finalizar-compra:hover {
     background-color: var(--accent-color);
@@ -408,7 +431,7 @@ main section > div {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    }
+}
 
 .producto {
     background-color: var(--light-text);
@@ -500,7 +523,7 @@ main section > div {
 }
 
 .inputCantidad[type="number"] {
-    
+    -moz-appearance: textfield;
 }
 
 .agregarCarrito,
@@ -625,7 +648,7 @@ footer {
     color: var(--secondary-color);
     font-weight: 600;
     letter-spacing: 0.3px;
-    }
+}
 
 .contenido-navegacion-footer ul {
     list-style: none;
@@ -641,7 +664,7 @@ footer {
     transition: color 0.3s ease;
     font-weight: 500;
     letter-spacing: 0.3px;
-    }
+}
 
 .contenido-navegacion-footer ul li a:hover {
     color: var(--secondary-color);
@@ -670,14 +693,14 @@ footer {
 
 /* Animaciones */
 @keyframes fadeInUp {
-    from {
+from {
     opacity: 0;
     transform: translateY(30px);
-    }
-    to {
+}
+to {
     opacity: 1;
     transform: translateY(0);
-    }
+}
 }
 
 /* Accesibilidad */
@@ -685,194 +708,174 @@ a:focus,
 button:focus,
 input:focus,
 textarea:focus {
-    outline: 2px solid var(--secondary-color);
-    outline-offset: 2px;
+outline: 2px solid var(--secondary-color);
+outline-offset: 2px;
 }
 
-/* Responsive */
+/* Responsive*/
 @media (max-width: 992px) {
-    .contenido-banner-principal,
-    .bienvenida-dimaro,
-    .descripcion-dimaro {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .texto-banner-principal h2 {
-        font-size: 3rem;
-    }
-    
-    .texto-bienvenida-dimaro h2 {
-        font-size: 2.3rem;
-    }
-    }
-    
-    @media (max-width: 768px) {
-    /* Menú hamburguesa */
-    .contenido-navegacion {
-        justify-content: space-between;
-    }
-    
-    .logo {
-        order: 0;
-        flex: 1;
-        text-align: center;
-    }
-    
-    .contenedor-carrito {
-        order: 1;
-    }
-    
-    /* Crear botón hamburguesa */
-    .links-navegacion::before {
-      content: "\2630"; /* Símbolo de hamburguesa ☰ */
-        display: block;
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        font-size: 1.8rem;
-        color: var(--light-text);
-        cursor: pointer;
-        padding: 10px;
-        z-index: 1001;
-        transition: color 0.3s ease;
-    }
-    
-    .links-navegacion:hover::before {
-        color: var(--secondary-color);
-    }
-    
-    /* Estilos para el menú desplegable */
-    .links-navegacion {
-        position: relative;
-        order: -1;
-        width: auto;
-    }
-    
-    .links-navegacion nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background-color: var(--primary-color);
-        width: 200px;
-        padding: 20px;
-        border-radius: 0 0 10px 10px;
-        box-shadow: var(--shadow);
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-    }
-    
-    .links-navegacion:hover nav,
-    .links-navegacion:focus-within nav {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-    
-    .links-navegacion nav ul {
-        flex-direction: column;
-        gap: 15px;
-        text-align: left;
-    }
-    
-    .texto-banner-principal h2 {
-        font-size: 2.5rem;
-    }
-    
-    .contenido-carrito {
-        width: 90vw;
-        right: 5vw;
-    }
-    
-    .form-row {
-        flex-direction: column;
-    }
-    
-    /* Footer */
-    .contenido-footer {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-    
-    .contenido-navegacion-footer ul {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .footer-redes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .footer-redes a {
-        margin: 5px;
-    }
-    
-    .contenedor-banner-principal {
-        background-attachment: scroll;
-    }
-    
-    /* Productos */
-    main section > div {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    
-    .producto img {
-        height: 200px;
-        object-fit: contain;
-        padding: 10px;
-    }
-    }
+.contenido-banner-principal,
+.bienvenida-dimaro,
+.descripcion-dimaro {
+    flex-direction: column;
+    text-align: center;
+}
+
+.texto-banner-principal h2 {
+    font-size: 3rem;
+}
+
+.texto-bienvenida-dimaro h2 {
+    font-size: 2.3rem;
+}
+}
+
+@media (max-width: 768px) {
+  /* Menú hamburguesa */
+.contenido-navegacion {
+    justify-content: space-between;
+}
+
+.logo {
+    order: 0;
+    flex: 1;
+    text-align: center;
+}
+
+.contenedor-carrito {
+    order: 1;
+}
+
+  /* Mostrar botón hamburguesa en celular */
+.btnHamburgueza {
+    display: block;
+    order: -1;
+}
+
+  /* Estilo para el menú desplegable */
+.links-navegacion {
+    position: relative;
+    order: -1;
+    width: auto;
+}
+
+.links-navegacion nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary-color);
+    width: 200px;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: var(--shadow);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.links-navegacion nav.menu-abierto {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.links-navegacion nav ul {
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.texto-banner-principal h2 {
+    font-size: 2.5rem;
+}
+
+.contenido-carrito {
+    width: 90vw;
+    right: 5vw;
+}
+
+.form-row {
+    flex-direction: column;
+}
+
+  /* Footer responsive */
+.contenido-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+}
+
+.contenido-navegacion-footer ul {
+    flex-direction: column;
+    gap: 15px;
+}
+
+.footer-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-redes a {
+    margin: 5px;
+}
+
+.contenedor-banner-principal {
+    background-attachment: scroll;
+}
+
+  /* Productos responsive */
+main section > div {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.producto img {
+    height: 200px;
+    object-fit: contain;
+    padding: 10px;
+}
+}
 
 @media (max-width: 576px) {
-    .logo h1 {
-        font-size: 1.8rem;
-    }
+.logo h1 {
+    font-size: 1.8rem;
+}
 
-    .texto-banner-principal h2 {
-        font-size: 2rem;
-    }
+.texto-banner-principal h2 {
+    font-size: 2rem;
+}
 
-    .texto-bienvenida-dimaro h2 {
-        font-size: 1.8rem;
-    }
+.texto-bienvenida-dimaro h2 {
+    font-size: 1.8rem;
+}
 
-    main section h1 {
-        font-size: 2.2rem;
-    }
-    
-    .Imagen-tortas-bienvenida img,
-    .video-descripcion-dimaro video {
-        height: 250px;
-    }
-    
-    /* Ajustar posición del menú hamburguesa */
-    .links-navegacion::before {
-        padding: 5px;
-    }
-    
-    /* Productos en móvil */
-    .producto {
-        margin-bottom: 15px;
-    }
-    
-    .producto img {
-        height: 180px;
-    }
-    
-    /* Footer en móvil */
-    .footer-redes {
-        text-align: center;
-    }
-    
+main section h1 {
+    font-size: 2.2rem;
+}
+
+.Imagen-tortas-bienvenida img,
+.video-descripcion-dimaro video {
+    height: 250px;
+}
+
+
+.producto {
+    margin-bottom: 15px;
+}
+
+.producto img {
+    height: 180px;
+}
+
+
+.footer-redes {
+    text-align: center;
+}
+
     .footer-redes a {
         display: inline-flex;
         margin: 5px;
-    }
+}
 }

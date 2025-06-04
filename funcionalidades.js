@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const carritoGuardado = localStorage.getItem("carrito")
     if (carritoGuardado) {
-    carrito = JSON.parse(carritoGuardado)
+        carrito = JSON.parse(carritoGuardado)
     }
 
     mostrarCarrito()
@@ -43,15 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Mostrar u ocultar el carrito manualmente
     document.getElementById("botonCarrito").addEventListener("click", () => {
-    const carrito = document.getElementById("cestaContenido")
-    carrito.classList.toggle("oculto")
-    evitarCierreCarrito = true
+        const carrito = document.getElementById("cestaContenido")
+        carrito.classList.toggle("oculto")
+        evitarCierreCarrito = true
     })
 
   // Ocultar el carrito si se hace clic fuera
     document.addEventListener("click", (e) => {
-    const carrito = document.getElementById("cestaContenido")
-    const boton = document.getElementById("botonCarrito")
+        const carrito = document.getElementById("cestaContenido")
+        const boton = document.getElementById("botonCarrito")
 
     if (evitarCierreCarrito) {
         evitarCierreCarrito = false
@@ -61,51 +61,33 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!carrito.contains(e.target) && !boton.contains(e.target)) {
         carrito.classList.add("oculto")
     }
-    })
+})
 
-  // Menú hamburguesa - CORREGIDO
-    const menuHamburguesa = document.querySelector(".links-navegacion")
+  // Menú hamburguesa
+    const botonHamburguesa = document.querySelector(".btnHamburgueza")
     const menuNav = document.querySelector(".links-navegacion nav")
-    let menuAbierto = false
 
-    if (menuHamburguesa && menuNav) {
-    // Crear un botón específico para el menú hamburguesa
-    const botonHamburguesa = document.createElement("div")
-    botonHamburguesa.className = "boton-hamburguesa"
-    botonHamburguesa.style.position = "absolute"
-    botonHamburguesa.style.left = "0"
-    botonHamburguesa.style.top = "50%"
-    botonHamburguesa.style.transform = "translateY(-50%)"
-    botonHamburguesa.style.width = "40px"
-    botonHamburguesa.style.height = "40px"
-    botonHamburguesa.style.cursor = "pointer"
-    botonHamburguesa.style.zIndex = "1002"
-    menuHamburguesa.appendChild(botonHamburguesa)
-
-    // Manejar clic en el botón hamburguesa
+if (botonHamburguesa && menuNav) {
     botonHamburguesa.addEventListener("click", (e) => {
-      e.stopPropagation() // Evitar que el clic llegue al documento
+        e.stopPropagation()
         menuNav.classList.toggle("menu-abierto")
-        menuAbierto = !menuAbierto
     })
 
-    // Cerrar menú cuando se hace clic en un enlace
+    // Cierra menú con clic en un enlace
     const enlaces = menuNav.querySelectorAll("a")
     for (let i = 0; i < enlaces.length; i++) {
         enlaces[i].addEventListener("click", () => {
         menuNav.classList.remove("menu-abierto")
-        menuAbierto = false
-        })
+    })
     }
 
-    // Cerrar menú cuando se hace clic fuera
+    // Cierra menú con clic fuera
     document.addEventListener("click", (e) => {
-    if (menuAbierto && !menuNav.contains(e.target) && !botonHamburguesa.contains(e.target)) {
+    if (!menuNav.contains(e.target) && !botonHamburguesa.contains(e.target)) {
         menuNav.classList.remove("menu-abierto")
-        menuAbierto = false
-      }
+    }
     })
-  }
+}
 })
 
 function agregarAlCarrito(index) {
@@ -144,21 +126,21 @@ function mostrarCarrito() {
     tbody.innerHTML = ""
     let total = 0
 
-    if (carrito.length === 0) {
+if (carrito.length === 0) {
     mensaje.style.display = "block"
     tabla.style.display = "none"
     totalBox.style.display = "none"
     botones.style.display = "none"
     totalElemento.textContent = "$0"
     return
-    }     
+}
 
     mensaje.style.display = "none"
     tabla.style.display = "table"
     totalBox.style.display = "flex"
     botones.style.display = "flex"
 
-    carrito.forEach((producto, index) => {
+carrito.forEach((producto, index) => {
     const subtotal = producto.precio * producto.cantidad
     total += subtotal
 
@@ -171,7 +153,7 @@ function mostrarCarrito() {
             <td><button onclick="eliminarProducto(${index})"><i class="bi bi-trash"></i></button></td>
         `
     tbody.appendChild(fila)
-    })
+})
 
     totalElemento.textContent = `$${total.toLocaleString()}`
 }
@@ -180,7 +162,7 @@ function eliminarProducto(index) {
     carrito.splice(index, 1)
     mostrarCarrito()
     localStorage.setItem("carrito", JSON.stringify(carrito))
-  evitarCierreCarrito = true // Evitar que se cierre el carrito
+    evitarCierreCarrito = true // Evitar que se cierre el carrito
 }
 
 function vaciarCarrito() {
@@ -192,12 +174,12 @@ function vaciarCarrito() {
 
 function finalizarCompra() {
     if (carrito.length === 0) {
-    alert("El carrito está vacío. Agregá productos antes de finalizar la compra.")
+        alert("El carrito está vacío. Agregá productos antes de finalizar la compra.")
     } else {
-    alert("¡Gracias por tu compra! Se ha realizado de manera exitosa.")
-    carrito = []
-    mostrarCarrito()
-    localStorage.removeItem("carrito")
+        alert("¡Gracias por tu compra! Se ha realizado de manera exitosa.")
+        carrito = []
+        mostrarCarrito()
+        localStorage.removeItem("carrito")
     }
 }
 
@@ -206,23 +188,23 @@ function activarBotonesMas() {
     const inputsCantidad = document.querySelectorAll(".inputCantidad")
 
     botonesMas.forEach((boton, index) => {
-    boton.addEventListener("click", () => {
+        boton.addEventListener("click", () => {
         const valor = Number.parseInt(inputsCantidad[index].value)
         inputsCantidad[index].value = valor + 1
     })
-    })
+})
 }
 
 function activarBotonesMenos() {
-    onst botonesMenos = document.querySelectorAll(".btnMenos")
+    const botonesMenos = document.querySelectorAll(".btnMenos")
     const inputsCantidad = document.querySelectorAll(".inputCantidad")
 
     botonesMenos.forEach((boton, index) => {
-    boton.addEventListener("click", () => {
+        boton.addEventListener("click", () => {
         const valor = Number.parseInt(inputsCantidad[index].value)
         if (valor > 1) {
         inputsCantidad[index].value = valor - 1
         }
     })
-    })
+})
 }
