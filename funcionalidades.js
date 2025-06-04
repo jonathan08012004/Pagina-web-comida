@@ -136,6 +136,7 @@ function eliminarProducto(index) {
     carrito.splice(index, 1);
     mostrarCarrito();
     localStorage.setItem('carrito', JSON.stringify(carrito));
+    evitarCierreCarrito = true; // Evitar que se cierre el carrito
 }
 
 function vaciarCarrito() {
