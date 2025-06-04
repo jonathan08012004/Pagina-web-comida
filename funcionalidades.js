@@ -41,14 +41,14 @@ document.addEventListener('DOMContentLoaded', () => {
     activarBotonesMas();
     activarBotonesMenos();
 
-    // ✅ Mostrar u ocultar el carrito manualmente
+    //Muestra o esconde el carrito manualmente
     document.getElementById('botonCarrito').addEventListener('click', () => {
         const carrito = document.getElementById('cestaContenido');
         carrito.classList.toggle('oculto');
         evitarCierreCarrito = true;
     });
 
-    // ✅ Ocultar el carrito si se hace clic fuera
+    // Esconde el carrito si se aprieta afuera
     document.addEventListener('click', (e) => {
         const carrito = document.getElementById('cestaContenido');
         const boton = document.getElementById('botonCarrito');
@@ -62,6 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
             carrito.classList.add('oculto');
         }
     });
+
+    // Menu hamburgueza
+    const menuHamburguesa = document.querySelector(".links-navegacion")
+    const menuNav = document.querySelector(".links-navegacion nav")
+
+    if (menuHamburguesa && menuNav) {
+    menuHamburguesa.addEventListener("click", () => {
+        menuNav.classList.toggle("menu-abierto")
+    })
+
+    // Cierra el menú cuando se hace clic en un enlace
+    const enlaces = menuNav.querySelectorAll("a")
+    for (let i = 0; i < enlaces.length; i++) {
+        enlaces[i].addEventListener("click", () => {
+        menuNav.classList.remove("menu-abierto")
+        })
+    }
+
+    // Cierra el menú cuando se hace clic fuera
+    document.addEventListener("click", (e) => {
+        if (!menuHamburguesa.contains(e.target)) {
+        menuNav.classList.remove("menu-abierto")
+        }
+    })
+    }
 });
 
 function agregarAlCarrito(index) {
@@ -83,7 +108,7 @@ function agregarAlCarrito(index) {
     mostrarCarrito();
     localStorage.setItem('carrito', JSON.stringify(carrito));
 
-    // ✅ Abrir el carrito al agregar
+    // Abre el carrito al cuando se agrega algo
     const carritoElement = document.getElementById('cestaContenido');
     carritoElement.classList.remove('oculto');
     evitarCierreCarrito = true;
