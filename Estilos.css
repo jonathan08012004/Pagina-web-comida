@@ -761,11 +761,11 @@ outline-offset: 2px;
 
 .links-navegacion nav {
     position: absolute;
-    top: 100%;
-    left: 0;
+    top: 30px;
+    left: 0px;
     background-color: var(--primary-color);
     width: 200px;
-    padding: 20px;
+    padding: 25px 20px;
     border-radius: 0 0 10px 10px;
     box-shadow: var(--shadow);
     opacity: 0;
@@ -783,7 +783,7 @@ outline-offset: 2px;
 
 .links-navegacion nav ul {
     flex-direction: column;
-    gap: 15px;
+    gap: 18px;
     text-align: left;
 }
 
